@@ -41,6 +41,10 @@ switch-events {
     lid-close { spawn "swaylock";}
 }
 
+cursor {
+    hide-after-inactive-ms 3000
+}
+
 layout {
     background-color "#0b0909"
 
