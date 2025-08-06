@@ -1,0 +1,188 @@
+prefer-no-csd
+
+spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/Downloads/Nightsea_desktop.jpg"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "waybar"
+
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
+
+environment {
+    DISPLAY ":0"
+}
+
+input {
+    keyboard {
+        xkb {
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60.000"
+    
+    focus-at-startup
+
+    scale 0.85
+}
+
+output "eDP-2" {
+    mode "1920x1200@165.000"
+
+    focus-at-startup
+}
+
+switch-events {
+    lid-close { spawn "swaylock";}
+}
+
+layout {
+    background-color "#0b0909"
+
+    gaps 16
+
+    center-focused-column "never"
+    always-center-single-column
+
+    empty-workspace-above-first
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    preset-window-heights {
+        proportion 0.5
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 1
+
+        active-color "#ebebeb"
+        inactive-color "#0b0909"
+    }
+
+    border {
+        width 1
+
+        active-color "#0b0909"
+    }
+}
+
+overview {
+    backdrop-color "#0b0909"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+clipboard {
+    disable-primary
+}
+
+// Base rule
+window-rule {
+    draw-border-with-background false
+
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+// Kitty
+window-rule {
+    match app-id="kitty"
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "prime-run" "kitty"; } 
+    Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "fuzzel"; }
+    Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    Mod+O repeat=false hotkey-overlay-title="Toggle Overview" { toggle-overview; }
+
+    Mod+Q repeat=false hotkey-overlay-title="Close Window" { close-window; }
+
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+
+    Mod+Ctrl+H { move-column-left; }
+    Mod+Ctrl+J { move-window-down; }
+    Mod+Ctrl+K { move-window-up; }
+    Mod+Ctrl+L { move-column-right; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End { focus-column-last; }
+
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End { move-column-to-last; }
+
+    Mod+Shift+H { focus-monitor-left; }
+    Mod+Shift+J { focus-monitor-down; }
+    Mod+Shift+K { focus-monitor-up; }
+    Mod+Shift+L { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L{ move-column-to-monitor-right; }
+
+    Mod+D { focus-workspace-down; }
+    Mod+U { focus-workspace-up; }
+    Mod+Ctrl+D { move-column-to-workspace-down; }
+    Mod+Ctrl+U { move-column-to-workspace-up; }
+
+    Mod+Shift+D { move-workspace-down; }
+    Mod+Shift+U { move-workspace-up; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight { focus-column-right; }
+    Mod+WheelScrollLeft { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft { move-column-left; }
+
+    Mod+Shift+WheelScrollDown { focus-column-right; }
+    Mod+Shift+WheelScrollUp { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp { move-column-left; }
+
+    Mod+R repeat=false hotkey-overlay-title="Resize Window Width" { switch-preset-column-width; }
+    Mod+Shift+R repeat=false hotkey-overlay-title="Resize Window Height" { switch-preset-window-height; }
+    Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height" { reset-window-height; }
+    Mod+F repeat=false hotkey-overlay-title="Maximize Window" { maximize-column; }
+    Mod+Shift+F repeat=false hotkey-overlay-title="Toggle Fullscreen" { fullscreen-window; }
+
+    Mod+C repeat=false hotkey-overlay-title="Center Window" { center-column; }
+
+    Mod+V repeat=false hotkey-overlay-title="Toggle Floating Window" { toggle-window-floating; }
+    Mod+Shift+V repeat=false hotkey-overlay-title="Switch Focus Mode"{ switch-focus-between-floating-and-tiling; }
+
+    Print repeat=false hotkey-overlay-title="Screenshot" { screenshot; }
+    Ctrl+Print repeat=false hotkey-overlay-title="Screenshot (Screen)" { screenshot-screen; }
+    Alt+Print repeat=false hotkey-overlay-title="Screenshot (Window)" { screenshot-window; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+E hotkey-overlay-title="Quit Niri" { quit; }
+}
