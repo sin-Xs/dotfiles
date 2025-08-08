@@ -65,8 +65,11 @@ return {
 
             -- Override colors
             colors = {
-                bg = "#0b090a",
-                fg = "#cdcdcd",
+                bg = "#1c1e1e",
+                fg = "#939393",
+                error = "#d8647e",
+
+
                 floatBorder = "#878787",
                 line = "#252530",
                 comment = "#606079",
@@ -78,7 +81,6 @@ return {
                 constant = "#aeaed1",
                 parameter = "#bb9dbd",
                 visual = "#333738",
-                error = "#d8647e",
                 warning = "#f3be7c",
                 hint = "#7e98e8",
                 operator = "#90a0b5",

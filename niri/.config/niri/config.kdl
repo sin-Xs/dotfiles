@@ -10,6 +10,10 @@ environment {
     DISPLAY ":0"
 }
 
+debug {
+    render-drm-device "/dev/dri/card1"
+}
+
 input {
     keyboard {
         xkb {
@@ -24,15 +28,19 @@ input {
 }
 
 output "HDMI-A-1" {
-    mode "1920x1080@60.000"
+    mode "3440x1440@99.992"
+
+    position x=1920 y=0
     
     focus-at-startup
 
-    scale 0.85
+    scale 1
 }
 
 output "eDP-2" {
     mode "1920x1200@165.000"
+
+    position x=0 y=0
 
     focus-at-startup
 }
@@ -109,7 +117,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "prime-run" "kitty"; } 
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
     Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "fuzzel"; }
     Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
 
