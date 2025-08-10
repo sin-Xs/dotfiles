@@ -1,6 +1,6 @@
 prefer-no-csd
 
-spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/Downloads/Nightsea_desktop.jpg"
+spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/Downloads/astronaut_wide_desktop.png"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 
