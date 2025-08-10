@@ -1,8 +1,11 @@
 return {
     "vague2k/vague.nvim",
+    lazy = false,  -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other plugins
     config = function()
         -- NOTE: you do not need to call setup if you don't want to.
         require("vague").setup({
+            -- optional configuration here
             transparent = false, -- don't set background
             -- disable bold/italic globally in `style`
             bold = true,
@@ -65,12 +68,9 @@ return {
 
             -- Override colors
             colors = {
-                bg = "#1c1e1e",
-                fg = "#939393",
-                error = "#d8647e",
-
-
-                floatBorder = "#878787",
+                bg = "#131415",
+                fg = "#a7a9a9",
+                floatBorder = "#808080",
                 line = "#252530",
                 comment = "#606079",
                 builtin = "#b4d4cf",
@@ -81,8 +81,9 @@ return {
                 constant = "#aeaed1",
                 parameter = "#bb9dbd",
                 visual = "#333738",
-                warning = "#f3be7c",
-                hint = "#7e98e8",
+                error = "#98a22a",
+                warning = "#a2702a",
+                hint = "#2aa234",
                 operator = "#90a0b5",
                 keyword = "#6e94b2",
                 type = "#9bb4bc",
