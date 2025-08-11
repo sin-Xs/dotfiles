@@ -1,10 +1,10 @@
 prefer-no-csd
 
-spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/Downloads/astronaut_wide_desktop.png"
+spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/media/images/astronaut_wide_desktop.png"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 
-screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/media/images/screenshots/screenshot_%Y-%m-%d %H-%M-%S.png"
 
 environment {
     DISPLAY ":0"
@@ -117,7 +117,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
+    Mod+Return repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
     Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "fuzzel"; }
     Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
 
@@ -131,13 +131,13 @@ binds {
     Mod+Q repeat=false hotkey-overlay-title="Close Window" { close-window; }
 
     Mod+H { focus-column-left; }
-    Mod+J { focus-window-down; }
-    Mod+K { focus-window-up; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
     Mod+L { focus-column-right; }
 
     Mod+Ctrl+H { move-column-left; }
-    Mod+Ctrl+J { move-window-down; }
-    Mod+Ctrl+K { move-window-up; }
+    Mod+Ctrl+J { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+K { move-window-up-or-to-workspace-up; }
     Mod+Ctrl+L { move-column-right; }
 
     Mod+Home { focus-column-first; }
@@ -155,11 +155,6 @@ binds {
     Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L{ move-column-to-monitor-right; }
-
-    Mod+D { focus-workspace-down; }
-    Mod+U { focus-workspace-up; }
-    Mod+Ctrl+D { move-column-to-workspace-down; }
-    Mod+Ctrl+U { move-column-to-workspace-up; }
 
     Mod+Shift+D { move-workspace-down; }
     Mod+Shift+U { move-workspace-up; }

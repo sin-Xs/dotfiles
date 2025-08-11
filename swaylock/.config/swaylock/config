@@ -12,30 +12,30 @@ indicator-idle-visible
 indicator-thickness=8
 indicator-radius=60
 
-key-hl-color=c91b18
-bs-hl-color=c91b18
-caps-lock-key-hl-color=c91b18
-caps-lock-bs-hl-color=c91b18
+key-hl-color=d33d33
+bs-hl-color=d33d33
+caps-lock-key-hl-color=d33d33
+caps-lock-bs-hl-color=d33d33
 separator-color=ffffff00
 
-ring-color=ebebeb
+ring-color=bdbdbd
 
 text-ver-color=ffffff00
 ring-ver-color=ffffff00
 line-ver-color=ffffff00
 inside-ver-color=ffffff00
 
-text-wrong-color=ebebeb
+text-wrong-color=bdbdbd
 ring-wrong-color=c91b18
-line-wrong-color=ebebeb
+line-wrong-color=bdbdbd
 inside-wrong-color=c91b18e0
 
-text-clear-color=ebebeb
-ring-clear-color=250504
-line-clear-color=ebebeb
-inside-clear-color=250504e0
+text-clear-color=bdbdbd
+ring-clear-color=70281f
+line-clear-color=bdbdbd
+inside-clear-color=70281fe0
 
-text-caps-lock-color=ebebeb
-ring-caps-lock-color=0b0909
-line-caps-lock-color=ebebeb
-inside-caps-lock-color=0b0909e0
+text-caps-lock-color=bdbdbd
+ring-caps-lock-color=131415
+line-caps-lock-color=bdbdbd
+inside-caps-lock-color=131415e0
