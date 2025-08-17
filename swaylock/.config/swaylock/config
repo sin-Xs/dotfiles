@@ -1,6 +1,6 @@
 daemonize
 
-image="$HOME/Downloads/Dangling_desktop.jpg"
+image="$HOME/media/images/Dangling_desktop.jpg"
 scaling=fill
 color=000000
 

@@ -118,7 +118,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
-    Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "fuzzel"; }
+    Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "wofi" "-S" "drun" "-I" "-W" "30%" "-H" "30%"; }
     Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
