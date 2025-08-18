@@ -113,6 +113,15 @@ window-rule {
 // Kitty
 window-rule {
     match app-id="kitty"
+
+    open-floating true
+}
+
+// LibreWolf
+window-rule {
+    match app-id="librewolf" title="Bitwarden"
+
+    open-floating true
 }
 
 binds {
