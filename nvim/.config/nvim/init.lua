@@ -10,5 +10,4 @@ require("config.lazy")
 -- LSP
 require("config.lsp")
 
--- Color Scheme
-vim.cmd [[colorscheme vague]]
+require("colors.sinxs")
