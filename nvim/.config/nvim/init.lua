@@ -10,4 +10,5 @@ require("config.lazy")
 -- LSP
 require("config.lsp")
 
+-- Colorscheme
 require("colors.sinxs")

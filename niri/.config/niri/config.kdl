@@ -3,6 +3,7 @@ prefer-no-csd
 spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/media/images/astronaut_wide_desktop.png"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
+spawn-at-startup "swayidle" "-w"
 
 screenshot-path "~/media/images/screenshots/screenshot_%Y-%m-%d %H-%M-%S.png"
 
