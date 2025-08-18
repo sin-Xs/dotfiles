@@ -6,6 +6,7 @@ sinXs' personal configuration files for:
 - neovim
 - niri
 - waybar
+- etc ...
 
 ## License
 

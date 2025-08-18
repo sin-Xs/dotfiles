@@ -1,2 +1,2 @@
 *.bak
-nvim/spell/
+**/nvim/spell/
