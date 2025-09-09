@@ -8,7 +8,7 @@
 @define-color workspaces-urgent-fg #2aa234;
 
 /* Text and border colors for modules */
-@define-color weather-color magenta;
+@define-color weather-color #a2342a;
 @define-color playerctl-color #a2342a;
 @define-color playerctl-playing #a2342a;
 @define-color playerctl-paused #98a22a;

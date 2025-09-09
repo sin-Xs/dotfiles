@@ -18,6 +18,8 @@ debug {
 input {
     keyboard {
         xkb {
+            layout "us"
+            variant "colemak_dh"
         }
         numlock
     }
@@ -108,6 +110,28 @@ window-rule {
 
     geometry-corner-radius 4
     clip-to-geometry true
+}
+
+// Scriptor rule
+window-rule {
+    match app-id="kitty" title="scriptor"
+
+    open-floating true
+    open-focused false
+
+    default-window-height { proportion 0.1; }
+    default-column-width { proportion 0.2; }
+    default-floating-position x=20 y=20 relative-to="bottom-right"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        active-color "#d33d33"
+        inactive-color "#d33d33"
+        urgent-color "#d33d33"
+    }
 }
 
 binds {
