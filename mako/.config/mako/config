@@ -1,0 +1,16 @@
+default-timeout=10000
+
+font=CommitMono Nerd Font 10
+
+background-color=#131415
+text-color=#a7a9a9
+
+border-size=2
+border-color=#d33d33
+border-radius=4
+
+margin=30
+padding=9
+
+text-alignment=right
+

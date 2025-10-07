@@ -31,7 +31,7 @@ input {
 }
 
 output "HDMI-A-1" {
-    mode "3440x1440@99.992"
+    mode "3440x1440@100.00"
 
     position x=1920 y=0
     
@@ -112,6 +112,17 @@ window-rule {
     clip-to-geometry true
 }
 
+// Base floating rule
+window-rule {
+    match app-id="^org.pulseaudio.pavucontrol$"
+    match app-id="^blueman-manager$"
+
+    open-floating true
+
+    default-window-height { proportion 0.75; }
+    default-column-width { proportion 0.25; }
+}
+
 // Scriptor rule
 window-rule {
     match app-id="kitty" title="scriptor"
@@ -137,14 +148,19 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+U { spawn-sh "kitty +kitten unicode_input | wtype"; }
+
     Mod+Return repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
-    Mod+E repeat=false hotkey-overlay-title="Run Application: fuzzel" { spawn "wofi" "-S" "drun" "-I" "-W" "30%" "-H" "30%"; }
+    Mod+E repeat=false hotkey-overlay-title="Run Application: wofi" { spawn "wofi" "-S" "drun" "-I" "-W" "30%" "-H" "30%"; }
     Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    XF86KbdBrightnessUp allow-when-locked=true { spawn "asusctl" "-n"; }
+    XF86KbdBrightnessDown allow-when-locked=true { spawn "asusctl" "-p"; }
 
     Mod+O repeat=false hotkey-overlay-title="Toggle Overview" { toggle-overview; }
 

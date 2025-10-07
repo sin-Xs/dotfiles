@@ -1,2 +1,2 @@
 timeout 300 'swaylock'
-before-sleep 'swaylock'
+timeout 360 'niri msg action power-off-monitors'
