@@ -31,20 +31,19 @@
     "custom/updates": {
         "format": "󰚰  {}",
         "exec": "paru -Qu | wc -l",
-        "interval": 3600,
+        "interval": 600,
         "on-click-right": "kitty -e paru",
         "signal": 8
     },
 
     "custom/separator": {
-        "format": "|",
+        "format": "||",
         "interval": "once",
         "tooltip": false
     },
 
     "clock": {
-        "format": "󰥔  {:%H:%M}",
-        "format-alt": "󰃮  {:%d-%m-%Y}",
+        "format": "󰥔  {:%H:%M | %d-%m-%Y }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode"          : "month",
@@ -69,7 +68,6 @@
         "format": "{icon}  {capacity}%",
         "format-charging": "󰂄  {capacity}%",
         "format-plugged": "󰚥  {capacity}%",
-        "format-alt": "{icon}  {time}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
@@ -80,7 +78,7 @@
         "format-disconnected": "󰖪  Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "kitty -e nmtui"
+        "on-click-right": "kitty -e nmtui"
     },
 
     "pulseaudio": {
@@ -97,10 +95,10 @@
             "car": "󰄋",
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
+        "on-click-right": "pavucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
     },
 
     "backlight": {
