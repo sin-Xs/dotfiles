@@ -4,6 +4,7 @@ spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/media/images/ast
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "swayidle" "-w"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 screenshot-path "~/media/images/screenshots/screenshot_%Y-%m-%d %H-%M-%S.png"
 
