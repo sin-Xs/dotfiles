@@ -20,3 +20,8 @@ if vim.fn.executable('pyright-langserver') == 1 then
 	vim.lsp.enable('pyright')
 	vim.lsp.config('pyright', {})
 end
+
+if vim.fn.executable('bash-language-server') == 1 then
+	vim.lsp.enable('bashls')
+	vim.lsp.config('bashls', {})
+end
