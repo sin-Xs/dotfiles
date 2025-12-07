@@ -117,6 +117,7 @@ window-rule {
 window-rule {
     match app-id="^org.pulseaudio.pavucontrol$"
     match app-id="^blueman-manager$"
+    match app-id="^kitty$" title="^nmtui$"
 
     open-floating true
 
@@ -159,6 +160,8 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"; }
     XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioNext { spawn "playerctl" "next"; }
+    XF86AudioPrev { spawn "playerctl" "previous"; }
 
     XF86KbdBrightnessUp allow-when-locked=true { spawn "asusctl" "-n"; }
     XF86KbdBrightnessDown allow-when-locked=true { spawn "asusctl" "-p"; }
