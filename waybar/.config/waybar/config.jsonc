@@ -32,7 +32,7 @@
         "format": "󰚰  {}",
         "exec": "paru -Qu | wc -l",
         "interval": 600,
-        "on-click-right": "nmcli dev wifi rescan && kitty -e paru",
+        "on-click-right": "kitty -e paru",
         "signal": 8
     },
 
@@ -78,7 +78,7 @@
         "format-disconnected": "󰖪  Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click-right": "kitty --title=nmtui -e nmtui"
+        "on-click-right": "kitty --title=nmtui -e nmtui && sleep 1 && nmcli dev wifi rescan"
     },
 
     "pulseaudio": {
