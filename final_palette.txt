@@ -1,0 +1,90 @@
+# blu - Color Palette
+
+## Main Color
+
+* #bc7463
+* #d33d33
+* #a2342a
+* #70281f
+
+## Accent Color
+
+* #a2702a
+* #98a22a
+* #a4a96d
+* #4c8e34
+* #2aa234
+
+## Base Color
+
+* #131415
+* #808080
+* #a7a9a9
+* #bdbdbd
+* #ffffff
+
+## Error Color
+
+* #ff0000
+
+## Warning Color
+
+* #ffcc00
+
+## Highlight Color
+
+* #00ff00
+
+## Info Color
+
+* #00ccff
+
+## Hint Color
+
+* #00ffff
+
+
+# froppy - Color Palette (Hue: +114)
+
+## Main Color
+
+* #63BC6A
+* #38D333
+* #2CA22A
+* #1F7020
+
+## Accent Color
+
+* #2AA264
+* #2AA2A0
+* #6DA9A8
+* #34648E
+* #2AA250
+
+## Base Color
+
+* #131415
+* #808080
+* #a7a9a9
+* #bdbdbd
+* #ffffff
+
+## Error Color
+
+* #ff0000
+
+## Warning Color
+
+* #ffcc00
+
+## Highlight Color
+
+* #00ff00
+
+## Info Color
+
+* #00ccff
+
+## Hint Color
+
+* #00ffff

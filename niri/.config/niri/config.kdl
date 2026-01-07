@@ -118,6 +118,7 @@ window-rule {
     match app-id="^org.pulseaudio.pavucontrol$"
     match app-id="^blueman-manager$"
     match app-id="^kitty$" title="^nmtui$"
+    match app-id="^com.nextcloud.desktopclient.nextcloud$"
 
     open-floating true
 
