@@ -5,7 +5,7 @@
     "spacing": 1,
     "margin": 0,
     "modules-left": ["niri/workspaces", "custom/separator", "custom/weather", "custom/playerctl"],
-    "modules-right": ["clock", "network", "pulseaudio", "backlight", "battery", "custom/updates", "custom/separator", "tray"],
+    "modules-right": ["clock", "network", "pulseaudio", "backlight", "battery", "custom/updates", "idle_inhibitor", "custom/separator", "tray"],
 
     "niri/workspaces": {
         "format": "{index}",
@@ -106,6 +106,14 @@
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-up": "brightnessctl set +1%",
         "on-scroll-down": "brightnessctl set 1%-"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
 
     "tray": {

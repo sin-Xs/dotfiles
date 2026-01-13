@@ -31,12 +31,20 @@ input {
     }
 }
 
-output "HDMI-A-1" {
+output "PNP(XXX) GF340C Unknown" {
     mode "3440x1440@100.00"
 
     position x=0 y=0
     
     focus-at-startup
+
+    scale 1
+}
+
+output "HDMI-A-1" {
+    mode "1980x1020@60.00"
+
+    position x=0 y=0
 
     scale 1
 }
@@ -151,18 +159,24 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+P repeat=false {spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+
     Mod+U { spawn-sh "kitty +kitten unicode_input | wtype"; }
 
     Mod+Return repeat=false hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; } 
     Mod+E repeat=false hotkey-overlay-title="Run Application: wofi" { spawn "wofi" "-S" "drun" "-I" "-W" "30%" "-H" "30%"; }
     Mod+S repeat=false hotkey-overlay-title="Lock Screen: swaylock" { spawn "swaylock"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"; }
-    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86AudioNext { spawn "playerctl" "next"; }
-    XF86AudioPrev { spawn "playerctl" "previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "2%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "2%-"; }
+    XF86AudioMute allow-when-locked=true repeat=false { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true repeat=false { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioNext allow-when-locked=true repeat=false { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true repeat=false { spawn "playerctl" "previous"; }
+    XF86AudioPlay allow-when-locked=true repeat=false { spawn "playerctl" "play-pause"; }
+
+    Mod+XF86AudioRaiseVolume allow-when-locked=true { spawn "playerctl" "volume" "0.02+"; }
+    Mod+XF86AudioLowerVolume allow-when-locked=true { spawn "playerctl" "volume" "0.02-"; }
 
     XF86KbdBrightnessUp allow-when-locked=true { spawn "asusctl" "-n"; }
     XF86KbdBrightnessDown allow-when-locked=true { spawn "asusctl" "-p"; }

@@ -10,7 +10,7 @@ o.expandtab = true
 o.signcolumn = "yes"
 o.termguicolors = true
 o.spell = true
-o.spelllang = "en_us"
+o.spelllang = "en_us,de"
 o.title = true
 
 vim.keymap.set('n', '<C-S>', ':let @/=""<CR>')

@@ -25,3 +25,13 @@ if vim.fn.executable('bash-language-server') == 1 then
 	vim.lsp.enable('bashls')
 	vim.lsp.config('bashls', {})
 end
+
+if vim.fn.executable('clangd') == 1 then
+	vim.lsp.enable('clangd')
+	vim.lsp.config('clangd', {})
+end
+
+if vim.fn.executable('texlab') == 1 then
+    vim.lsp.enable('texlab')
+    vim.lsp.config('texlab', {})
+end
