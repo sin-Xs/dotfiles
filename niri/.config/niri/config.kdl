@@ -1,19 +1,16 @@
 prefer-no-csd
 
-spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/media/images/astronaut_wide_desktop.png"
+spawn-at-startup "swaybg" "-o" "*" "-m" "fill" "-i" "/home/arch/media/pictures/astronaut_wide_desktop.png"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "swayidle" "-w"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 screenshot-path "~/media/images/screenshots/screenshot_%Y-%m-%d %H-%M-%S.png"
 
 environment {
     DISPLAY ":0"
-}
-
-debug {
-    render-drm-device "/dev/dri/card1"
 }
 
 input {
@@ -127,11 +124,13 @@ window-rule {
     match app-id="^blueman-manager$"
     match app-id="^kitty$" title="^nmtui$"
     match app-id="^com.nextcloud.desktopclient.nextcloud$"
+    match app-id="^naps2$" title="^Batch Scan$"
+    match app-id="^naps2$" title="^CanoScan"
 
     open-floating true
 
     default-window-height { proportion 0.75; }
-    default-column-width { proportion 0.25; }
+    default-column-width { proportion 0.35; }
 }
 
 // Scriptor rule

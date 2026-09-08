@@ -4,7 +4,7 @@
     "height": 20,
     "spacing": 1,
     "margin": 0,
-    "modules-left": ["niri/workspaces", "custom/separator", "custom/weather", "custom/playerctl"],
+    "modules-left": ["niri/workspaces", "custom/separator", "custom/playerctl"],
     "modules-right": ["clock", "network", "pulseaudio", "backlight", "battery", "custom/updates", "idle_inhibitor", "custom/separator", "tray"],
 
     "niri/workspaces": {
@@ -19,13 +19,6 @@
         "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl next"
-    },
-
-    "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=1'",
-        "interval": 900,
-        "format": "{}",
-        "tooltip": true
     },
 
     "custom/updates": {
@@ -45,6 +38,7 @@
     "clock": {
         "format": "󰥔  {:%H:%M | %d-%m-%Y }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "locale": "C",
         "calendar": {
             "mode"          : "month",
             "weeks-pos"     : "left",
