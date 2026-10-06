@@ -4,10 +4,10 @@ function switch_layout --description 'switches the layout between the standard u
 
     if test -e $niri_config; and not test -e $niri_config_bak
         sed -i'.bak' 's/^[^/]*variant "colemak_dh"/\/\/variant "colemak_dh"/' $niri_config
-        echo "switch to gaming mode"
+        echo "switched to gaming mode"
     else if test -e $niri_config; and test -e $niri_config_bak
         rm $niri_config
         mv $niri_config_bak $niri_config
-        echo "switch back"
+        echo "switched back"
     end
 end
